@@ -1,16 +1,21 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import HeaderGrad from "../components/HeaderGrad.astro";
+import SimpleTitle from "../components/SimpleTitle.astro";
+import CardGrid from "../components/CardGrid.astro";
+import CurrentWork from "../components/CurrentWork.astro";
+import PreviousWork from "../components/PreviousWork.astro";
+import FeaturedArticle from "../components/FeaturedArticle.astro";
+import MusicCard from "../components/MusicCard.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Jamie Moore - Creative Developer</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<Layout title="Home Page" bg="deep-purple">
+  <HeaderGrad />
+  <SimpleTitle />
+  <CardGrid>
+    <CurrentWork />
+    <PreviousWork />
+    <MusicCard />
+    <FeaturedArticle />
+  </CardGrid>
+</Layout>

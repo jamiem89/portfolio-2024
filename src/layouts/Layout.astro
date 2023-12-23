@@ -1,0 +1,20 @@
+---
+import Footer from "../components/Footer.astro";
+const { title, bg } = Astro.props;
+---
+
+<html lang="en" class="bg-deep-purple">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jamie Moore - {title}</title>
+  </head>
+  <body class=`overflow-x-hidden bg-${bg}`>
+    <div
+      class="grid grid-cols-1 gap-6 w-[95%] mx-auto lg:w-[90%] max-w-[1320px]"
+    >
+      <slot />
+    </div>
+    <Footer />
+  </body>
+</html>
