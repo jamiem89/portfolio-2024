@@ -6,7 +6,7 @@ import CardGrid from "../components/CardGrid.astro";
 import CurrentWork from "../components/CurrentWork.astro";
 import PreviousWork from "../components/PreviousWork.astro";
 import FeaturedArticle from "../components/FeaturedArticle.astro";
-import MusicCard from "../components/MusicCard.astro";
+import MusicCard from "../components/MusicCard.jsx";
 ---
 
 <Layout title="Home Page" bg="deep-purple">
@@ -15,7 +15,7 @@ import MusicCard from "../components/MusicCard.astro";
   <CardGrid>
     <CurrentWork />
     <PreviousWork />
-    <MusicCard />
+    <MusicCard client:load />
     <FeaturedArticle />
   </CardGrid>
 </Layout>
