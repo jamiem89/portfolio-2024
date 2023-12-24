@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 const MusicCard = () => {
   const [albums, setAlbums] = useState([]);
+  const artistsString = "";
 
   // Fetch albums data
 
@@ -20,8 +21,9 @@ const MusicCard = () => {
       albumsData.forEach((album) => {
         const artist = album.artist.name;
         const albumCover = album.image[3]["#text"];
+        const title = album.name;
 
-        setAlbums((prevState) => [...prevState, { artist, albumCover }]);
+        setAlbums((prevState) => [...prevState, { artist, albumCover, title }]);
       });
     };
 
@@ -29,7 +31,7 @@ const MusicCard = () => {
   }, []);
 
   return (
-    <article className="rounded-3xl bg-white p-6 md:p-10 flex flex-col col-span-1 md:col-span-5 lg:col-span-4 md:min-h-[450px]">
+    <article className="relative rounded-3xl bg-white p-6 md:p-10 flex flex-col col-span-1 md:col-span-5 lg:col-span-4 md:min-h-[450px] overflow-hidden">
       <h3 className="text-black text-h3 md:text-h3Med md:max-w-[425px] mb-2">
         Lover of music
       </h3>
@@ -44,9 +46,14 @@ const MusicCard = () => {
       </span>
 
       {/* Album covers */}
-      <div className="">
+      <div className="absolute flex justify-center bottom-0 left-0 w-full h-1/2">
         {albums.map((album) => (
-          <img src={album.albumCover} />
+          <div
+            key={album.title}
+            class="absolute -bottom-3 w-1/2 origin-bottom-center rotate-[20deg] z-10 translate-x-32 first:-translate-x-0 first:rotate-0 first:z-20 last:-translate-x-32 last:-rotate-[20deg]"
+          >
+            <img src={album.albumCover} alt={album.title} />
+          </div>
         ))}
       </div>
     </article>
