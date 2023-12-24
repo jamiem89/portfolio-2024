@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const MusicCard = () => {
   const [albums, setAlbums] = useState([]);
-  const artistsString = "";
+  const [artistString, setArtistString] = useState("");
 
   // Fetch albums data
 
@@ -17,6 +17,7 @@ const MusicCard = () => {
       const data = await response.json();
 
       const albumsData = data.topalbums.album;
+      let artistText = "";
 
       albumsData.forEach((album) => {
         const artist = album.artist.name;
@@ -24,7 +25,17 @@ const MusicCard = () => {
         const title = album.name;
 
         setAlbums((prevState) => [...prevState, { artist, albumCover, title }]);
+
+        if (!artistText.includes(artist)) {
+          if (!artistText.length) {
+            artistText = `${artist}`;
+          } else {
+            artistText += `, ${artist}`;
+          }
+        }
       });
+
+      setArtistString(artistText);
     };
 
     fetchAlbums();
@@ -37,8 +48,7 @@ const MusicCard = () => {
       </h3>
       {console.log(albums)}
       <p className="mb-3">
-        Here’s what i’ve been listening to lately: Kendrick Lamarr, Taylor Swift
-        and Kanye West.
+        Here’s what i’ve been listening to lately: {artistString}
       </p>
 
       <span className="uppercase font-extrabold text-tiny text-bright-purple">
@@ -50,7 +60,7 @@ const MusicCard = () => {
         {albums.map((album) => (
           <div
             key={album.title}
-            class="absolute -bottom-3 w-1/2 origin-bottom-center rotate-[20deg] z-10 translate-x-32 first:-translate-x-0 first:rotate-0 first:z-20 last:-translate-x-32 last:-rotate-[20deg]"
+            className="absolute -bottom-3 w-1/2 origin-bottom-center rotate-[20deg] z-10 translate-x-32 first:-translate-x-0 first:rotate-0 first:z-20 last:-translate-x-32 last:-rotate-[20deg]"
           >
             <img src={album.albumCover} alt={album.title} />
           </div>
