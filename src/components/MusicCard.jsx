@@ -9,7 +9,7 @@ const MusicCard = () => {
   useEffect(() => {
     const fetchAlbums = async () => {
       const response = await fetch(
-        `http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=jamiem89&format=json&period=1month&limit=3&api_key=${
+        `http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=jamiem89&format=json&period=7day&limit=3&api_key=${
           import.meta.env.PUBLIC_LASTFM_API_KEY
         }`
       );
@@ -46,15 +46,12 @@ const MusicCard = () => {
       <h3 className="text-black text-h3 md:text-h3Med md:max-w-[425px] mb-2">
         Lover of music
       </h3>
-      {console.log(albums)}
       <p className="mb-3">
         Here’s what i’ve been listening to lately: {artistString}
       </p>
-
       <span className="uppercase font-extrabold text-tiny text-bright-purple">
         {String.fromCharCode(42)} Data grabbed from the Last.fm API
       </span>
-
       {/* Album covers */}
       <div className="absolute flex justify-center bottom-0 left-0 w-full h-1/2">
         {albums.map((album) => (

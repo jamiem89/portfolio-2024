@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'opensource';
+  src: url('/fonts/opensaucesans-regular.woff') format('woff'), url('/fonts/opensaucesans-regular.woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'opensource';
+  src: url('/fonts/opensaucesans-extrabold.woff') format('woff'), url('/fonts/opensaucesans-extrabold.woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'opensource';
+  src: url('/fonts/opensaucesans-medium.woff') format('woff'), url('/fonts/opensaucesans-medium.woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'opensource';
+  src: url('/fonts/opensaucesans-mediumitalic.woff') format('woff'), url('/fonts/opensaucesans-mediumitalic.woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,14 +1,18 @@
 ---
-import Grid from "../components/Grid.astro";
+
 ---
 
-<Grid classes="pt-[120px] pb-10 h-[85vh] items-end">
+<section
+  class="relative grid gap-3 items-end pt-[60vh] pb-4 z-10 md:pb-10 md:pt-[120px] md:h-[85vh] md:gap-6 md:grid-cols-12"
+>
   <h1
     class="font-extrabold text-white md:col-span-7 text-3xl md:text-5xl lg:text-[62px]"
   >
     Jamie Moore
   </h1>
-  <p class="text-white md:col-span-3 text-xl">
-    <em>Creative developer</em>, with a background in <em>digital design</em>.
+  <p class="text-white lg:text-xl md:col-span-5 md:max-w-[360px]">
+    <em class="italic">Creative developer</em>, with a background in <em
+      class="italic">digital design</em
+    >.
   </p>
-</Grid>
+</section>
