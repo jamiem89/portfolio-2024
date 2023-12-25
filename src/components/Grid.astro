@@ -13,7 +13,7 @@ const { classes } = Astro.props;
   const observerOptions = {
     root: null,
     threshold: 0,
-    rootMargin: "-50px",
+    rootMargin: "-200px",
   };
 
   // Set up the observer
@@ -26,9 +26,9 @@ const { classes } = Astro.props;
     });
   }, observerOptions);
 
-  const sections = document.querySelectorAll(".js-fade-up");
+  const items = document.querySelectorAll(".js-fade-up");
 
-  for (let section of sections) {
-    observer.observe(section);
+  for (let item of items) {
+    observer.observe(item);
   }
 </script>

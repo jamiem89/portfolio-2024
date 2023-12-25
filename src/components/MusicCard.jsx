@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const MusicCard = () => {
   const [albums, setAlbums] = useState([]);
   const [artistString, setArtistString] = useState("");
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const ref = useRef(null);
 
   // Fetch albums data
 
@@ -53,7 +55,10 @@ const MusicCard = () => {
         {String.fromCharCode(42)} Data grabbed from the Last.fm API
       </span>
       {/* Album covers */}
-      <div className="absolute flex justify-center bottom-0 left-0 w-full h-1/2">
+      <div
+        className="absolute flex justify-center bottom-0 left-0 w-full h-1/2"
+        ref={ref}
+      >
         {albums.map((album) => (
           <div
             key={album.title}

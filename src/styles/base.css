@@ -44,3 +44,7 @@
   transform: translateY(0);
   opacity: 1;
 }
+
+.js-card-reveal {
+  border: 2px solid red;
+}
