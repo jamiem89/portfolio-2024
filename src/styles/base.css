@@ -33,3 +33,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.js-fade-up {
+  transform: translateY(80px);
+  opacity: 0;
+  transition: all .425s ease-out;
+}
+
+.js-fade-up.in-view {
+  transform: translateY(0);
+  opacity: 1;
+}

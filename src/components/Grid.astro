@@ -3,6 +3,32 @@
 const { classes } = Astro.props;
 ---
 
-<section class=`grid gap-6 md:grid-cols-12  z-10 relative ${classes}`>
+<section class=`grid gap-6 md:grid-cols-12 z-10 relative ${classes} js-grid`>
   <slot />
 </section>
+
+<!-- JS -->
+<script>
+  // Options
+  const observerOptions = {
+    root: null,
+    threshold: 0,
+    rootMargin: "-50px",
+  };
+
+  // Set up the observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  const sections = document.querySelectorAll(".js-fade-up");
+
+  for (let section of sections) {
+    observer.observe(section);
+  }
+</script>

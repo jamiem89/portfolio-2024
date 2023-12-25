@@ -42,7 +42,7 @@ const MusicCard = () => {
   }, []);
 
   return (
-    <article className="relative rounded-3xl bg-white p-6 md:p-10 flex flex-col col-span-1 md:col-span-5 lg:col-span-4 md:min-h-[450px] overflow-hidden">
+    <article className="relative rounded-3xl bg-white p-6 md:p-10 flex flex-col col-span-1 md:col-span-5 lg:col-span-4 md:min-h-[450px] overflow-hidden js-fade-up">
       <h3 className="text-black text-h3 md:text-h3Med md:max-w-[425px] mb-2">
         Lover of music
       </h3>
