@@ -44,12 +44,13 @@ const MusicCard = () => {
   }, []);
 
   return (
-    <article className="relative rounded-3xl bg-white p-6 md:p-10 flex flex-col col-span-1 md:col-span-5 lg:col-span-4 md:min-h-[450px] overflow-hidden js-fade-up">
+    <article className="relative rounded-3xl bg-white p-6 pb-[280px] md:p-10 flex flex-col col-span-1 md:col-span-5 lg:col-span-4 md:min-h-[450px] overflow-hidden js-fade-up">
       <h3 className="text-black text-h3 md:text-h3Med md:max-w-[425px] mb-2">
         Lover of music
       </h3>
       <p className="mb-3">
-        Here’s what i’ve been listening to lately: {artistString}
+        Here’s what i’ve been listening to lately:
+        <br className="md:hidden" /> {artistString}
       </p>
       <span className="uppercase font-extrabold text-tiny text-bright-purple">
         {String.fromCharCode(42)} Data grabbed from the Last.fm API
@@ -62,7 +63,7 @@ const MusicCard = () => {
         {albums.map((album) => (
           <div
             key={album.title}
-            className="absolute -bottom-3 w-1/2 origin-bottom-center rotate-[20deg] z-10 translate-x-32 first:-translate-x-0 first:rotate-0 first:z-20 last:-translate-x-32 last:-rotate-[20deg]"
+            className="absolute -bottom-3 max-w-[200px] md:max-w-[unset] md:w-1/2 origin-bottom-center rotate-[20deg] z-10 translate-x-32 first:-translate-x-0 first:rotate-0 first:z-20 last:-translate-x-32 last:-rotate-[20deg]"
           >
             <img src={album.albumCover} alt={album.title} />
           </div>
