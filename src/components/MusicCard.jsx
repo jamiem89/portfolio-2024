@@ -3,7 +3,6 @@ import { useEffect, useState, useRef } from "react";
 const MusicCard = () => {
   const [albums, setAlbums] = useState([]);
   const [artistString, setArtistString] = useState("");
-  const [isIntersecting, setIsIntersecting] = useState(false);
   const ref = useRef(null);
 
   // Fetch albums data
