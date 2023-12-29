@@ -30,6 +30,8 @@ env:
 
 jobs:
   build:
+    env: 
+      PUBLIC_LASTFM_API_KEY: ${{ secrets.PUBLIC_LASTFM_API_KEY }}
     name: Build
     runs-on: ubuntu-latest
     steps:
