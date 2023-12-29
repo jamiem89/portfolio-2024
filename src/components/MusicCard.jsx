@@ -10,7 +10,7 @@ const MusicCard = () => {
   useEffect(() => {
     const fetchAlbums = async () => {
       const response = await fetch(
-        `http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=jamiem89&format=json&period=7day&limit=3&api_key=${
+        `https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=jamiem89&format=json&period=7day&limit=3&api_key=${
           import.meta.env.PUBLIC_LASTFM_API_KEY
         }`
       );
