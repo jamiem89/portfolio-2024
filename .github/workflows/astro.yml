@@ -70,7 +70,6 @@ jobs:
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
         working-directory: ${{ env.BUILD_PATH }}
-        token: ${{ secrets.LASTFM_SHARED_SECRET }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -80,6 +79,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+      token: ${{ secrets.LASTFM_SHARED_SECRET }}
     needs: build
     runs-on: ubuntu-latest
     name: Deploy
